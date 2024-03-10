@@ -43,16 +43,17 @@ const Span = styled.span<Err>`
 const Form = () => {
   const [link, setLink] = useState<string>("");
   const [err, setErr] = useState<boolean>(false);
-  let links = link;
-  let erre = err;
   return (
     <StyledForm
       onSubmit={(e) => {
+        console.log(link);
         e.preventDefault();
       }}
     >
       <InPut setState={setLink} />
-      <Span err={err}>Please add a link</Span>
+      <Span err={err} onClick={() => setErr(true)}>
+        Please add a link
+      </Span>
       <Rectangular type="submit">Shorten It!</Rectangular>
     </StyledForm>
   );
