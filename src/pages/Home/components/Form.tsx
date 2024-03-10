@@ -43,7 +43,8 @@ const Span = styled.span<Err>`
 const Form = () => {
   const [link, setLink] = useState<string>("");
   const [err, setErr] = useState<boolean>(false);
-
+  let links = link;
+  let erre = err;
   return (
     <StyledForm
       onSubmit={(e) => {
