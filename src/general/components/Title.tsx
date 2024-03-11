@@ -9,7 +9,7 @@ interface Props {
 
 const StyledTitle = styled.h1<Props>`
   color: ${(props) => props.theme.colors.black};
-  font-size: 4.2rem;
+  font-size: ${(props) => (props.isSmall ? "2.8rem" : "4.2rem")};
   font-weight: 700;
   line-height: 4.8rem;
   letter-spacing: -1.05px;

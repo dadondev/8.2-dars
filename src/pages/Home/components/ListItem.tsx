@@ -4,6 +4,7 @@ import Item from "./Item";
 const List = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
   gap: 24px;
 `;
 

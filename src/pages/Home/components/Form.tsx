@@ -8,9 +8,8 @@ interface Err {
 }
 
 const StyledForm = styled.form`
-  top: -50%;
-  position: absolute;
   border-radius: 10px;
+  transform: translateY(-50%);
   background: url("/form-bg.png") no-repeat;
   background-size: cover;
   display: grid;

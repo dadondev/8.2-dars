@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Rectangular from "../../../general/components/Rectangular";
+import { useState } from "react";
 
 const Div = styled.div`
   padding: 6px 15px 16px;
@@ -29,12 +30,18 @@ const Span = styled.a`
 `;
 
 const Item = () => {
+  const [bool, setBool] = useState<boolean>(false);
+  const handleClick = () => {
+    setBool(!bool);
+  };
   return (
     <Div>
       <P>https://www.frontendmentor.io</P>
       <div>
         <Span href="https://rel.ink/k4lKyk">https://rel.ink/k4lKyk</Span>
-        <Rectangular type="button">Copy</Rectangular>
+        <Rectangular active={bool} type="button" onClick={handleClick}>
+          {bool ? "copied" : "copy"}
+        </Rectangular>
       </div>
     </Div>
   );
