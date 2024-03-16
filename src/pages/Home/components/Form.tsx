@@ -39,13 +39,35 @@ const Span = styled.span<Err>`
   letter-spacing: 0.082px;
 `;
 
+interface Dat {
+  "Content-Type": string;
+  apikey: string;
+}
+
 const Form = () => {
+  const [data, setData] = useState();
+  const handleSubmit = async () => {
+    const base = "https://api.rebrandly.com/v1/links";
+    if (link) {
+      setErr(false);
+      const req = await fetch(
+        {
+          "Content-Type": "application/json",
+          apikey: "0efffe4461ed4fe5a4796493c9f1b104",
+        },
+        "post"
+      );
+      const res = await req.json();
+      console.log(res);
+      return "helloo";
+    }
+  };
   const [link, setLink] = useState<string>("");
   const [err, setErr] = useState<boolean>(false);
   return (
     <StyledForm
       onSubmit={(e) => {
-        console.log(link);
+        handleSubmit();
         e.preventDefault();
       }}
     >
